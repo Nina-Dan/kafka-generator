@@ -20,6 +20,7 @@ jobs:
       - name: Build and Push to Docker Hub
         with:
           image: ${{ secrets.DOCKERHUB_USERNAME }}/kafka-generator
+          uses: mr-smithers-excellent/docker-build-push@v5
           tags: 0.0.$GITHUB_RUN_NUMBER, latest
           dockerfile: Dockerfile
           registry: docker.io
